@@ -1,0 +1,16 @@
+# R files
+.Rhistory
+.RData
+.Ruserdata
+
+# Data
+data/raw/*
+data/processed/*
+!data/README.md
+!data/sources.md
+
+# Results
+results/figures/*
+results/maps/*
+results/tables/*
+results/models/*

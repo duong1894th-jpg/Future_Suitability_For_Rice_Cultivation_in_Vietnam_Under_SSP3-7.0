@@ -1,0 +1,13 @@
+# Configuration for Rice Cultivation SDM
+paths:
+  data_raw: "../data/raw"
+  data_processed: "../data/processed"
+  results_maps: "../results/maps"
+  results_figures: "../results/figures"
+  results_tables: "../results/tables"
+  models: "../results/models"
+
+model:
+  algorithm: "maxent"
+  train_split: 0.8
+  seed: 42
