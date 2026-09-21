@@ -71,9 +71,7 @@ Source: [JAXA Earth Observation Research Center](https://earth.jaxa.jp/en/)
 
 ## Climate Data
 
-Bioclimatic variables were obtained from **CHELSA**.
-
-The model uses:
+Bioclimatic variables were calculated from temperature and rainfall data. The data for 2020 is at [Open Development Mekong](https://data.opendevelopmentmekong.net/dataset/data-on-average-rainfall-minimum-temperature-average-temperature-and-maximum-temperature-in-vietnam). The range presented in the data is from 1991 to 2020. Because only temperature and rainfall are available, the following bioclim variables were chosen:
 
 | Variable | Description |
 |---|---|
@@ -83,9 +81,9 @@ The model uses:
 | Bio12 | Annual Precipitation |
 | Bio15 | Precipitation Seasonality |
 
-Historical and future climate layers are used to represent baseline and SSP3-7.0 environmental conditions.
+Historical (1991-2020) data was used to represent baseline environmental conditions.
 
-Source: [CHELSA Climate Data](https://www.chelsa-climate.org/)
+Source: [Open Development Mekong Climate Data](https://data.opendevelopmentmekong.net/dataset/data-on-average-rainfall-minimum-temperature-average-temperature-and-maximum-temperature-in-vietnam)
 
 ---
 
@@ -387,17 +385,18 @@ rice-suitability-maxent/
 │   └── config.yaml
 │
 ├── scripts/
-│   ├── 01_prepare_boundary.py
-│   ├── 02_prepare_baseline_environment.py
-│   ├── 03_prepare_future_environment.py
-│   ├── 04_extract_rice_presence.py
-│   ├── 05_sample_train_test.py
-│   ├── 06_train_maxent.py
-│   ├── 07_validate_model.py
-│   ├── 08_predict_baseline.py
-│   ├── 09_predict_future.py
-│   ├── 10_compare_suitability.py
-│   └── 11_calculate_area_change.py
+│   ├── 01_prepare_boundary.R
+│   ├── 02_prepare_baseline_environment.R
+│   ├── 02b_transform_climate_data.R
+│   ├── 03_prepare_future_environment.R
+│   ├── 04_extract_rice_presence.R
+│   ├── 05_sample_train_test.R
+│   ├── 06_train_maxent.R
+│   ├── 07_validate_model.R
+│   ├── 08_predict_baseline.R
+│   ├── 09_predict_future.R
+│   ├── 10_compare_suitability.R
+│   └── 11_calculate_area_change.R
 │
 ├── results/
 │   ├── figures/
@@ -474,7 +473,7 @@ Large raster datasets are not included in this repository. Their original source
 | Dataset | Use | Source |
 |---|---|---|
 | JAXA Land Cover | Rice presence data | [JAXA](https://earth.jaxa.jp/en/) |
-| CHELSA Bioclim | Climate predictors | [CHELSA](https://www.chelsa-climate.org/) |
+| Open Development Mekong | Climate predictors | [Open Development Mekong](https://data.opendevelopmentmekong.net/dataset/data-on-average-rainfall-minimum-temperature-average-temperature-and-maximum-temperature-in-vietnam) |
 | DEM | Elevation | [Open Development Mekong](https://data.opendevelopmentmekong.net/) |
 | Soil | Soil predictor | [Open Development Mekong](https://data.vietnam.opendevelopmentmekong.net/) |
 | Vietnam Boundary | Study-area definition | [GIS.vn](https://gis.vn/ban-do-hanh-chinh-viet-nam) |

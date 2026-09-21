@@ -1,6 +1,3 @@
-# main.R - Rice Cultivation Suitability Mapping under SSP3-7.0
-# Combined analysis script based on the project README
-
 # -----------------------------------------------------------------------------
 # Setup & Configuration
 # -----------------------------------------------------------------------------
